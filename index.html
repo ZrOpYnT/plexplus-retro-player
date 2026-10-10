@@ -29,6 +29,5 @@
   <canvas id="tuning" hidden aria-hidden="true"></canvas>
   <div id="osd" class="osd" hidden role="status"><div id="osd-label"></div><div id="osd-bars" hidden></div></div>
   <script src="retro-youtube-player.js"></script>
-<script src="bridge.js"></script><script>setInterval(function(){var d=document.getElementById('dbgp');if(!d){d=document.createElement('div');d.id='dbgp';d.style.cssText='position:fixed;left:0;top:0;z-index:99999;background:#000d;color:#ff0;font:12px monospace;white-space:pre';document.body.appendChild(d);}try{var s=window.retro.snapshot();var f=document.querySelector('iframe');var yt=window.YT&&YT.get&&YT.get('player');d.textContent='st='+s.state+' err='+s.error+' vis='+s.pictureVisible+' reveal='+s.revealMs+' rev='+s.revision+'
-t='+(yt&&yt.getCurrentTime&&yt.getCurrentTime().toFixed(1))+' op='+(f&&f.style.opacity)+' sz='+(f&&f.clientWidth+'x'+f.clientHeight)+' id='+s.id;}catch(e){d.textContent='ERR '+e.message;}},500);</script></body>
+<script src="bridge.js"></script></body>
 </html>
