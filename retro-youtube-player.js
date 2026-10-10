@@ -130,7 +130,7 @@
             transform: stretch === 1 ? 'scale(' + scale + ')' : 'scale(' + scale * stretch + ',' + scale + ')', transformOrigin: 'top left',
             // Opacity keeps the embedded document rendering while its transport
             // animation fades. visibility:hidden was postponing that animation.
-            filter: 'brightness(' + (0.5 + pictureKnobs.brightness / 100) + ') contrast(' + (0.5 + pictureKnobs.contrast / 100) + ') saturate(' + (pictureKnobs.color / 50) + ')',
+            filter: (pictureKnobs.brightness === 50 && pictureKnobs.contrast === 50 && pictureKnobs.color === 50) ? 'none' : 'brightness(' + (0.5 + pictureKnobs.brightness / 100) + ') contrast(' + (0.5 + pictureKnobs.contrast / 100) + ') saturate(' + (pictureKnobs.color / 50) + ')',
             pointerEvents: 'none', visibility: 'visible', opacity: active && [1, 2, 3].includes(state) && pictureVisible ? '1' : '0' });
     }
     window.addEventListener('resize', presentPicture);
