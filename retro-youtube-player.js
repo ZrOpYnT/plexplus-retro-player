@@ -189,6 +189,8 @@
         if (dead || !active || error)
             return;
         error = code;
+        wantPlay = false;
+        stopNoise();
         pictureVisible = false;
         ++startGeneration;
         ++stallGeneration;
@@ -286,12 +288,10 @@
         if (apiStarted || dead)
             return;
         apiStarted = true;
-        timeout = setTimeout(() => { if (!ready && !dead)
-            error = -1; }, 20000);
+        timeout = setTimeout(() => { if (!ready && !dead) {error = -1;stopNoise();} }, 20000);
         const script = document.createElement('script');
         script.src = 'https://www.youtube.com/iframe_api';
-        script.onerror = () => { if (!dead)
-            error = -1; };
+        script.onerror = () => { if (!dead) {error = -1;stopNoise();} };
         document.head.appendChild(script);
     }
     window.onYouTubeIframeAPIReady = function () {
@@ -350,6 +350,8 @@
                 },
                 onError: event => { if (!dead && active && errorMatches()) {
                     error = event.data;
+                    wantPlay = false;
+                    stopNoise();
                     pictureVisible = false;
                     ++startGeneration;
                     ++stallGeneration;
