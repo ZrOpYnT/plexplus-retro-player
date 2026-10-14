@@ -1,0 +1,13 @@
+# This repo is public static player source. Never add account/server configuration.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+config.json
+cookies.txt
+node_modules/
+*.log
