@@ -16,7 +16,7 @@
     // A CRT's raster filled its tube; up to this much horizontal stretch meets glass that is wider
     // (or narrower) than the clip before any cropping is needed.
     const TUBE_STRETCH = 1.08;
-    const REVEAL_WINDOW = 650, START_LIMIT = 15000, STALL_LIMIT = 10000;
+    const REVEAL_WINDOW = 650, START_LIMIT = 15000, STALL_LIMIT = 30000;
     const durations = new Map();
     let firstPlayMs = 0;
     let firstPlayAt = -1, wantPlay = false, startTimer = null, stallTimer = null, startGeneration = 0, stallGeneration = 0;
